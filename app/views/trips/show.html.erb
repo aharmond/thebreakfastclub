@@ -1,12 +1,18 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
+
 <h1><%= @trip.name %></h1>
 <div><%= @trip.start_date %> - <%= @trip.end_date %>
 <ul>
 <% @trip.locations.each do |location| %>
   <li><%= link_to location.name, location_path(location) %></li>
     <div><%= location.days %></li>
-    <%= link_to 'Delete Location', location_path(location), method: :delete %>
+    <%= link_to 'Delete Location', location_path(location), method: :delete, class:"ui basic button inverted red" %>
 <% end %>
-<%= link_to 'Add Location', new_trip_location_path(@trip) %>
-<%= link_to 'Edit Trip', edit_trip_path(@trip) %>
-<%= link_to 'Delete Trip', @trip, method: :delete %>
+<%= link_to 'Add Location', new_trip_location_path(@trip), class:"ui basic button inverted yellow" %>
+<%= link_to 'Edit Trip', edit_trip_path(@trip), class:"ui basic button inverted teal" %>
+<%= link_to 'Delete Trip', @trip, method: :delete, class:"ui basic button inverted red" %>
      
