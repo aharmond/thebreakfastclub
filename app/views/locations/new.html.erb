@@ -1,1 +1,11 @@
-<%= render "form", location: @location %>
+<%= form_with(model: [@trip, @location], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+    <br />
+    <%= f.label :day %>
+    <%= f.text_field :day, required: true, placeholder: "Day(s)" %>
+
+    <%= f.submit nil, class: "ui button" %>
+  </div>
+<% end %>
