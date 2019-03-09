@@ -5,14 +5,14 @@ class LocationsController < ApplicationController
   def index
     @locations = @trip.locations
   end
-
+  
   def show
   end
-
+  
   def new
     @location = @trip.locations.new
   end
-
+  
   def create
     @location = @trip.locations.new(location_params)
     if @location.save
