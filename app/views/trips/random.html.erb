@@ -9,9 +9,15 @@ body {
         <div class="card-panel hoverable">
             <% @trips.each do |trip| %>
                 <h3><%= trip.name %></h3>
+<<<<<<< HEAD
                 <%= link_to 'Show trip', trip_path(trip), class: "ui basic button blue" %>
                 <%= link_to 'Edit trip', edit_trip_path(trip), class: "ui basic button purple" %>
                 <%= link_to 'Destroy trip', trip, method: :delete, class: "ui basic button red" %>
+=======
+                <%= link_to 'Show Trip', trip_path(trip), class: "ui button blue" %>
+                <%= link_to 'Edit Trip', edit_trip_path(trip), class: "ui button purple" %>
+                <%= link_to 'Destroy Trip', trip, method: :delete, class: "ui button red" %>
+>>>>>>> ef90a0ee83673b439fc37474d28af435d4935c8b
             <% end %>
         </div>
     </div> 
