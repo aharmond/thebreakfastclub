@@ -3,7 +3,7 @@ class CreateLocations < ActiveRecord::Migration[5.2]
     create_table :locations do |t|
       t.string :name
       t.integer :days
-      t.trip :belongs_to
+      t.belongs_to :trip, foreign_key: true
 
       t.timestamps
     end

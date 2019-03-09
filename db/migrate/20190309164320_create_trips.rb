@@ -4,6 +4,7 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.string :name
       t.datetime :start_date
       t.datetime :end_date
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
