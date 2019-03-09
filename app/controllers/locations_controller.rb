@@ -6,15 +6,15 @@ class LocationsController < ApplicationController
   def index
     @locations = @trip.locations
   end
-
+  
   def show
     @address = Address.find_by location_id: @location.id
   end
-
+  
   def new
     @location = @trip.locations.new
   end
-
+  
   def create
     @location = @trip.locations.new(location_params)
     if @location.save
