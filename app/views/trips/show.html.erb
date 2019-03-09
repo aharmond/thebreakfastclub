@@ -4,7 +4,7 @@
 <% @trip.locations.each do |location| %>
   <li><%= link_to location.name, location_path(location) %></li>
     <div><%= location.days %></li>
-    <%= link_to 'Remove from Trip', trip_location_path(@trip, location) %>
+    <%= link_to 'Delete Location', location_path(location), method: :delete %>
 <% end %>
 <%= link_to 'Add Location', new_trip_location_path(@trip) %>
 <%= link_to 'Edit Trip', edit_trip_path(@trip) %>

@@ -1,12 +1,14 @@
 class LocationsController < ApplicationController
-  before_action :set_trip
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, except: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :destroy, :edit, :update]
+  before_action :set_trip_alternate, only: [:destroy]
   
   def index
     @locations = @trip.locations
   end
   
   def show
+    @address = Address.find_by location_id: @location.id
   end
   
   def new
@@ -26,8 +28,9 @@ class LocationsController < ApplicationController
   end
 
   def update
+    @address = Address.find_by location_id: @location.id
     if @location.update(location_params)
-      redirect_to edit_location_address_path(@location.address.first)
+      redirect_to edit_location_address_path(@location, @address)
     else
       render :edit
     end
@@ -44,10 +47,14 @@ class LocationsController < ApplicationController
     end
 
     def set_location
-      @location = @trip.locations.find(params[:id])
+      @location = Location.find(params[:id])
     end
 
     def set_trip
       @trip = Trip.find(params[:trip_id])     
+    end
+
+    def set_trip_alternate
+      @trip = Trip.find_by id: @location.trip_id
     end
 end

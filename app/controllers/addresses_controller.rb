@@ -10,13 +10,13 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = @location.address.new
+    @address = Address.new
   end
 
   def create
-    @address = @location.address.new(address_params)
+    @address = Address.new(address_params)
     if @address.save
-      redirect_to location_addresses_path(@location)
+      redirect_to location_path(@location)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      redirect_to location_addresses_path(@location)
+      redirect_to location_path(@location)
     else
       render :edit
     end
@@ -49,6 +49,6 @@ class AddressesController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:street, :city, :state, :zip)
+    params.require(:address).permit(:street, :city, :state, :zip, :location_id)
   end
 end

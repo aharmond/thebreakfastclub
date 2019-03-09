@@ -8,6 +8,8 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -16,11 +18,16 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+<<<<<<< HEAD
+  <br>
+=======
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -30,9 +37,10 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
+>>>>>>> 1eed2fd79684afaac1c995ce820746a89c9c7384
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "ui button invert green" %>
   </div>
 <% end %>
 
