@@ -10,5 +10,5 @@ body {
 <div><%= @address.street %></div>
 <div><%= @address.city %>, <%= @address.state %></div>
 <div><%= @address.zip %></div>
-<%= link_to 'Edit Location', edit_location_path(@location) %>
-<%= link_to 'Remove Location', location_path(@location), method: :delete %>
+<%= link_to 'Edit Location', edit_location_path(@location), class: "ui green button" %>
+<%= link_to 'Remove Location', location_path(@location), method: :delete, class: "ui red button" %>
