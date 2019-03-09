@@ -3,18 +3,18 @@ class LocationController < ApplicationController
   before_action :set_location, only: [show:, edit:, update:, destroy:]
 
   def index
-    @locations = current_user.locations
+    @locations = @trip.locations
   end
 
   def show
   end
 
   def new
-    @location = location.new
+    @location = @trip.locations.new
   end
 
   def create
-    @location = current_user.locations.new(location_params)
+    @location = @trip.locations.new(location_params)
     if @location.save
       redirect_to locations_path
     else
@@ -44,11 +44,11 @@ class LocationController < ApplicationController
     end
 
     def set_location
-      @location = current_user.locations.find(params[:id])
+      @location = @trip.locations.find(params[:id])
     end
 
     def set_trip
-      @trip = locations.find(@trip.id)     
+      @trip = Trip.find(params[:id])     
     end
 
 end
