@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "devise/sessions#new"
+  root "trips#index"
   devise_for :users
 
   resources :trips do
