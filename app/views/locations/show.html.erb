@@ -4,5 +4,11 @@
 <div><%= @location.addresses.first.street %></div>
 <div><%= @location.addresses.first.city %>, <%= @location.addresses.first.state %>
 <div><%= @location.addresses.first.zip %>
-<%= link_to 'Edit Location', edit_location_path(@location) %>
-<%= link_to 'Delete Location', @location, method: :delete %>
+<div class="div-container">
+    <div class="center-align">
+        <div class="card-panel hoverable">
+          <%= link_to 'Edit Location', edit_location_path(@location), class:"ui button yellow" %>
+          <%= link_to 'Delete Location', @location, method: :delete, class:"ui button red" %>
+        </div>
+    </div>
+</div>        
