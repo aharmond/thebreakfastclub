@@ -1,13 +1,13 @@
 
 
-<div>
+<div></div>
 <%= image_tag('login-map.jpg', style: "height: 300px; width: 600px") %>
 <h1>Log in</h1>
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br />git 
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 

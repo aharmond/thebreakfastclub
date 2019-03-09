@@ -1,8 +1,8 @@
 <h1><%= @location.name %></h1>
 <div>Days: <%= @location.days %></div>
 <div>Address:</div>
-<div><%= @location.addresses.first.street %></div>
-<div><%= @location.addresses.first.city %>, <%= @location.addresses.first.state %>
-<div><%= @location.addresses.first.zip %>
+<div><%= @address.street %></div>
+<div><%= @address.city %>, <%= @address.state %>
+<div><%= @address.zip %>
 <%= link_to 'Edit Location', edit_location_path(@location) %>
-<%= link_to 'Delete Location', @location, method: :delete %>
+<%= link_to 'Delete Location', location_path(@location), method: :delete %>
