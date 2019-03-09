@@ -1,6 +1,7 @@
 <nav class="ui pointing menu">
   <%= link_to "Home", trips_path, class: "item" %>
   <%= link_to "New Trip", new_trip_path, class: "item" %>
+  <%= link_to 'Random Trips', random_path, class: "item" %>
   <div class="right menu">
     <% if current_user %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "item" %>

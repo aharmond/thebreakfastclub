@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   post '/trips/:trip_id/locations', to: "locations#create", as: "create_location"
+  get '/random', to: "trips#random", as: "random"
 end
