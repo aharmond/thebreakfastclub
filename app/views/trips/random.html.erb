@@ -1,11 +1,17 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
+
 <div class="div-container">
     <div class="center-align">
         <div class="card-panel hoverable">
             <% @trips.each do |trip| %>
                 <h3><%= trip.name %></h3>
-                <%= link_to 'Show trip', trip_path(trip), class: "ui button blue" %>
-                <%= link_to 'Edit trip', edit_trip_path(trip), class: "ui button purple" %>
-                <%= link_to 'Destroy trip', trip, method: :delete, class: "ui button red" %>
+                <%= link_to 'Show trip', trip_path(trip), class: "ui basic button blue" %>
+                <%= link_to 'Edit trip', edit_trip_path(trip), class: "ui basic button purple" %>
+                <%= link_to 'Destroy trip', trip, method: :delete, class: "ui basic button red" %>
             <% end %>
         </div>
     </div> 
