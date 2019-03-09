@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :locations do
     resources :addresses
   end
+
+  post '/trips/:trip_id/locations', to: "locations#create", as: "create_location"
 end
