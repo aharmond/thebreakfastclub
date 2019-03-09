@@ -1,22 +1,8 @@
 <h1><%= @location.name %></h1>
 <div>Days: <%= @location.days %></div>
 <div>Address:</div>
-<<<<<<< HEAD
-<div><%= @location.addresses.first.street %></div>
-<div><%= @location.addresses.first.city %>, <%= @location.addresses.first.state %>
-<div><%= @location.addresses.first.zip %>
-<div class="div-container">
-    <div class="center-align">
-        <div class="card-panel hoverable">
-          <%= link_to 'Edit Location', edit_location_path(@location), class:"ui button yellow" %>
-          <%= link_to 'Delete Location', @location, method: :delete, class:"ui button red" %>
-        </div>
-    </div>
-</div>        
-=======
 <div><%= @address.street %></div>
-<div><%= @address.city %>, <%= @address.state %>
-<div><%= @address.zip %>
+<div><%= @address.city %>, <%= @address.state %></div>
+<div><%= @address.zip %></div>
 <%= link_to 'Edit Location', edit_location_path(@location) %>
 <%= link_to 'Delete Location', location_path(@location), method: :delete %>
->>>>>>> cd8ff1261255e906dcf9c8801c2ca2753d41e909

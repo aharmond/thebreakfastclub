@@ -5,12 +5,18 @@ body {
 </style>
 
 <h1><%= @trip.name %></h1>
-<div><%= @trip.start_date %> - <%= @trip.end_date %>
+<div><%= @trip.start_date %> - <%= @trip.end_date %></div>
 <ul>
 <% @trip.locations.each do |location| %>
   <li><%= link_to location.name, location_path(location) %></li>
+<<<<<<< HEAD
     <div><%= location.days %></li>
     <%= link_to 'Delete Location', location_path(location), method: :delete, class:"ui basic button inverted red" %>
+=======
+    <div>Days: <%= location.days %></div>
+    <%= link_to 'Delete Location', location_path(location), method: :delete %>
+    <hr />
+>>>>>>> 798f7bba87c646bbe71b529e96c6963facb744db
 <% end %>
 <%= link_to 'Add Location', new_trip_location_path(@trip), class:"ui basic button inverted yellow" %>
 <%= link_to 'Edit Trip', edit_trip_path(@trip), class:"ui basic button inverted teal" %>
