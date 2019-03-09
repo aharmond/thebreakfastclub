@@ -7,8 +7,14 @@ body {
 <h1><%= @location.name %></h1>
 <div>Days: <%= @location.days %></div>
 <div>Address:</div>
-<div><%= @address.street %></div>
-<div><%= @address.city %>, <%= @address.state %></div>
-<div><%= @address.zip %></div>
-<%= link_to 'Edit Location', edit_location_path(@location), class: "ui green button" %>
-<%= link_to 'Remove Location', location_path(@location), method: :delete, class: "ui red button" %>
+<div class="div-container">
+    <div class="center-align">
+        <div class="card-panel hoverable">
+          <div><%= @address.street %></div>
+          <div><%= @address.city %>, <%= @address.state %></div>
+          <div><%= @address.zip %></div>
+          <%= link_to 'Edit Location', edit_location_path(@location), class:"ui basic blue button" %>
+          <%= link_to 'Remove Location', @location, method: :delete, class:"ui basic button red" %>
+        </div>
+    </div>
+</div>        
