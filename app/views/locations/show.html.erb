@@ -1,8 +1,19 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
+
 <h1><%= @location.name %></h1>
 <div>Days: <%= @location.days %></div>
 <div>Address:</div>
 <div><%= @address.street %></div>
 <div><%= @address.city %>, <%= @address.state %></div>
 <div><%= @address.zip %></div>
+<<<<<<< HEAD
 <%= link_to 'Edit Location', edit_location_path(@location) %>
 <%= link_to 'Remove Location', location_path(@location), method: :delete %>
+=======
+<%= link_to 'Edit Location', edit_location_path(@location), class:"ui basic button blue" %>
+<%= link_to 'Delete Location', location_path(@location), method: :delete, class:"ui basic button red" %>
+>>>>>>> 6cb3d422a2073c9b27d136a132dc06f30a781fb2

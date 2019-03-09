@@ -1,3 +1,9 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
+
 <%= form_with(model: [@location, address], local: true, class: "ui form") do |f| %>
   <div class="field">
     <%= f.label :street %>
@@ -13,6 +19,8 @@
     <%= f.text_field :zip, required: true, placeholder: "Zip" %>
 
     <%= f.hidden_field :location_id, value: @location.id%>
-    <%= f.submit nil, class: "ui button" %>
+    <br>
+    <br>
+    <%= f.submit nil, class: "ui basic button green" %>
   </div>
 <% end %>

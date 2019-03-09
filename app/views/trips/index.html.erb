@@ -1,3 +1,9 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
+
 <br>
 <br>
 <div class="center-align">
@@ -8,7 +14,11 @@
 
 <br>
 <br>
+<<<<<<< HEAD
 <%= link_to 'New Trip', new_trip_path, class:"ui button inverted green" %>
+=======
+<%= link_to 'New trip', new_trip_path, class:"ui basic button inverted green" %>
+>>>>>>> 6cb3d422a2073c9b27d136a132dc06f30a781fb2
 
 <br>
 <br>
@@ -18,11 +28,17 @@
         <div class="card-panel hoverable">
             <% @trips.each do |trip| %>
                 <h3><%= trip.name %></h3>
+<<<<<<< HEAD
                 <%= link_to 'Show Trip', trip_path(trip), class: "ui button blue" %>
                 <%= link_to 'Edit Trip', edit_trip_path(trip), class: "ui button purple" %>
                 <%= link_to 'Delete Trip', trip, method: :delete, class: "ui button red" %>
             <% end %>
+=======
+                <%= link_to 'Show trip', trip_path(trip), class: "ui basic button blue" %>
+                <%= link_to 'Edit trip', edit_trip_path(trip), class: "ui basic button purple" %>
+                <%= link_to 'Destroy trip', trip, method: :delete, class: "ui basic button red" %>
+>>>>>>> 6cb3d422a2073c9b27d136a132dc06f30a781fb2
         </div>
     </div> 
-</div>       
-
+</div>     
+<% end %>  

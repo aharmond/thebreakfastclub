@@ -1,3 +1,8 @@
+<style>
+body {
+  background-color: lightgrey;
+}
+</style>
 <%= form_with(model: [@trip, @location], local: true, class: "ui form") do |f| %>
   <div class="field">
     <%= f.label :name %>
@@ -6,6 +11,8 @@
     <%= f.label :day %>
     <%= f.text_field :day, required: true, placeholder: "Day(s)" %>
 
-    <%= f.submit nil, class: "ui button" %>
+    <br>
+    <br>
+    <%= f.submit nil, class: "ui basic button teal" %>
   </div>
 <% end %>
