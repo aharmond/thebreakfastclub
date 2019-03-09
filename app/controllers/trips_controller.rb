@@ -38,7 +38,7 @@ class TripsController < ApplicationController
 
   private
     def set_trip
-      @trip = Trip.single_trip(current_user.id, params[:id])
+      @trip = Trip.single_trip(current_user.id, params[:id])  
     end
 
     def trip_params
