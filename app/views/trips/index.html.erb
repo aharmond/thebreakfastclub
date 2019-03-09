@@ -1,5 +1,4 @@
-<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.email %></h2>
+<h2>Welcome <%= current_user.first_name %> <%= current_user.last_name %></h2>
 <% @trips.each do |trip| %>
     <h2><%= trip.name %></h2>
     <%= link_to 'Show trip', trip_path(trip) %>
